@@ -31,11 +31,13 @@ namespace TodoList_WebApp
                 new OpenIdConnectAuthenticationOptions
                 {
                     // The `Authority` represents the v2.0 endpoint - https://login.microsoftonline.com/common/v2.0
+                    // The `Scope` describes the permissions that your app will need.  See https://azure.microsoft.com/documentation/articles/active-directory-v2-scopes/
                     // In a real application you could use issuer validation for additional checks, like making sure the user's organization has signed up for your app, for instance.
 
                     ClientId = clientId,
                     Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, "common", "/v2.0"),
                     RedirectUri = redirectUri,
+                    Scope = "openid",
                     PostLogoutRedirectUri = redirectUri,
                     TokenValidationParameters = new TokenValidationParameters
                     {
