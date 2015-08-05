@@ -20,12 +20,12 @@ namespace TodoList_WebApp.Controllers
             }
         }
 
-        // BUGBUG: Sign Out is not yet supported by the MS STS
+        // BUGBUG: Sign Out is not yet supported by the v2 App Model
         public void SignOut()
         {
             // Send an OpenID Connect sign-out request.
-            HttpContext.GetOwinContext().Authentication.SignOut(
-                OpenIdConnectAuthenticationDefaults.AuthenticationType, CookieAuthenticationDefaults.AuthenticationType);
+            HttpContext.GetOwinContext().Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
+            Response.Redirect("/");
         }
 	}
 }
