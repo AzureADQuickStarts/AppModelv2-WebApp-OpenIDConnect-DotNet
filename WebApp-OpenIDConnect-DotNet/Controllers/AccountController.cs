@@ -13,19 +13,13 @@ namespace TodoList_WebApp.Controllers
     {
         public void SignIn()
         {
-            // Send an OpenID Connect sign-in request.
-            if (!Request.IsAuthenticated)
-            {
-                HttpContext.GetOwinContext().Authentication.Challenge(new AuthenticationProperties { RedirectUri = "/" }, OpenIdConnectAuthenticationDefaults.AuthenticationType);
-            }
+            // TODO: Send an OpenID Connect sign-in request.
         }
 
         // BUGBUG: Ending a session with the v2.0 endpoint is not yet supported.  Here, we just end the session with the web app.  
         public void SignOut()
         {
-            // Send an OpenID Connect sign-out request.
-            HttpContext.GetOwinContext().Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
-            Response.Redirect("/");
+            // TODO: Send an OpenID Connect sign-out request.
         }
 	}
 }
