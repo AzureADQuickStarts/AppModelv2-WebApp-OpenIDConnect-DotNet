@@ -20,7 +20,7 @@ namespace TodoList_WebApp.Controllers
             }
         }
 
-        // BUGBUG: Sign Out is not yet supported by the v2 App Model
+        // BUGBUG: Ending a session with the v2.0 endpoint is not yet supported.  Here, we just end the session with the web app.  
         public void SignOut()
         {
             // Send an OpenID Connect sign-out request.
