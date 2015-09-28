@@ -38,6 +38,7 @@ namespace TodoList_WebApp
                     Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, "common", "/v2.0"),
                     RedirectUri = redirectUri,
                     Scope = "openid",
+                    ResponseType = "id_token",
                     PostLogoutRedirectUri = redirectUri,
                     TokenValidationParameters = new TokenValidationParameters
                     {
