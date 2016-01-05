@@ -37,7 +37,7 @@ namespace TodoList_WebApp
                     ClientId = clientId,
                     Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, "common", "/v2.0"),
                     RedirectUri = redirectUri,
-                    Scope = "openid",
+                    Scope = "openid email profile",
                     ResponseType = "id_token",
                     PostLogoutRedirectUri = redirectUri,
                     TokenValidationParameters = new TokenValidationParameters
