@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sign-In with Microsoft Sample</title>
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding:50px">
+    <h3>Main Claims:</h3>
+    <table class="table table-striped table-bordered table-hover">
+        <tr><td>Name</td><td>@ViewBag.Name</td></tr>
+        <tr><td>Username</td><td>@ViewBag.Username</td></tr>
+        <tr><td>Subject</td><td>@ViewBag.Subject</td></tr>
+        <tr><td>TenantId</td><td>@ViewBag.TenantId</td></tr>
+    </table>
+    <br />
+    <h3>All Claims:</h3>
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        @foreach (var claim in System.Security.Claims.ClaimsPrincipal.Current.Claims)
+        {
+            <tr><td>@claim.Type</td><td>@claim.Value</td></tr>
+        }
+    </table>
+    <br />
+    <br />
+    @Html.ActionLink("Sign out", "SignOut", "Home", null, new { @class = "btn btn-primary" })
+</body>
+</html>
