@@ -4,7 +4,7 @@ ASP.NET Web Server - OpenID Connect v2 Endpoint Sample
 | [Getting Started](https://aka.ms/aadv2)| [Code Samples](https://github.com/azure-samples/) | [Support](README.md#community-help-and-support)
 | --- | --- | --- |
 
-## Go [here](https://review.docs.microsoft.com/en-us/azure/active-directory/develop/guidedsetups/active-directory-mobileanddesktopapp-windowsdesktop-intro) for information about this code sample and how to configure it
+## Go [here](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-mobileanddesktopapp-windowsdesktop-intro) for information about this code sample and how to configure it
 
 ## Community Help and Support
 
