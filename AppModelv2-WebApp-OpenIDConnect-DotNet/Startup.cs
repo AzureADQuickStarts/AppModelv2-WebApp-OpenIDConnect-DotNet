@@ -2,7 +2,8 @@
 using System.Threading.Tasks;
 using Microsoft.Owin;
 using Owin;
-using Microsoft.IdentityModel.Protocols;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OpenIdConnect;
@@ -44,13 +45,16 @@ namespace AppModelv2_WebApp_OpenIDConnect_DotNet
                 RedirectUri = redirectUri,
                 // PostLogoutRedirectUri is the page that users will be redirected to after sign-out. In this case, it is using the home page
                 PostLogoutRedirectUri = redirectUri,
-                Scope = OpenIdConnectScopes.OpenIdProfile,
+                Scope = OpenIdConnectScope.OpenIdProfile,
                 // ResponseType is set to request the id_token - which contains basic information about the signed-in user
-                ResponseType = OpenIdConnectResponseTypes.IdToken,
+                ResponseType = OpenIdConnectResponseType.IdToken,
                 // ValidateIssuer set to false to allow personal and work accounts from any organization to sign in to your application
                 // To only allow users from a single organizations, set ValidateIssuer to true and 'tenant' setting in web.config to the tenant name
                 // To allow users from only a list of specific organizations, set ValidateIssuer to true and use ValidIssuers parameter 
-                TokenValidationParameters = new System.IdentityModel.Tokens.TokenValidationParameters() { ValidateIssuer = false },
+                TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = false
+                },
                 // OpenIdConnectAuthenticationNotifications configures OWIN to send notification of failed authentications to OnAuthenticationFailed method
                 Notifications = new OpenIdConnectAuthenticationNotifications
                 {
