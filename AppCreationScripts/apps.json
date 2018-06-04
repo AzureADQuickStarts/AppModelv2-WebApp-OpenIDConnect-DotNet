@@ -1,0 +1,37 @@
+{
+  /*
+  This section describes the Azure AD Applications to configure, and their dependencies
+  */
+
+  "Sample": {
+    "Title": "Calling Microsoft Graph from a ASP.NET Web App",
+    "Level": 400,
+    "Client": ".NET Framework 4.5, ASP.NET"
+  },
+  "AppRegistrations": [
+    {
+      "x-ms-id": "AppModelv2-WebApp-OpenIDConnect-DotNet",
+      "x-ms-name": "WebApp-OpenIDConnect-DotNet",
+      "x-ms-version": "2.0",
+      "replyUrlsWithType": [
+        {
+          "url": "http://localhost:7360/",
+          "type": "Web"
+        }
+      ],
+      "requiredResourceAccess": [
+        {
+          "x-ms-resourceAppName": "Microsoft Graph",
+          "resourceAppId": "00000003-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
+              "type": "Scope",
+              "x-ms-name": "user.read"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
