@@ -1,4 +1,4 @@
-# Signing a user in an ASP.NET Web App with OpenID Connect and the v2 Endpoint
+# Signing a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform endpoint
 
 | [Getting Started](https://aka.ms/aadv2)| [Code Samples](https://github.com/azure-samples/) | [Support](http://aka.ms/devexhelpsupport)
 | --- | --- | --- |
