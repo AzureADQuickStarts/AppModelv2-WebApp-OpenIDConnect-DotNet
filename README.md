@@ -1,4 +1,15 @@
-# Signing a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform endpoint
+---
+page_type: sample
+languages:
+  - csharp  
+products:
+  - azure
+  - azure-active-directory  
+  - dotnet
+description: "The sample application for the quickstart.  Learn how to sign in a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform endpoint."
+---
+
+# Sign in a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform endpoint
 
 | [Getting Started](https://aka.ms/aadv2)| [Code Samples](https://github.com/azure-samples/) | [Support](http://aka.ms/devexhelpsupport)
 | --- | --- | --- |
