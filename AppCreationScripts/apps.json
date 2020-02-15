@@ -35,11 +35,12 @@
       ],
       "codeConfigurations": [	
         {
-	        "settingFile": "/AppModelv2-WebApp-OpenIDConnect-DotNet/Web.config", 
-		      "replaceTokens": {
-              "appId": "Enter_the_Application_Id_here",
-              "tenantId": "common"
-			     }
+	        "settingFile": "/AppModelv2-WebApp-OpenIDConnect-DotNet/Web.config",
+          "replaceTokens": {
+            "appId": "Enter_the_Application_Id_here",
+            "tenantId": "common",
+            "authorityEndpointHost": "https://login.microsoftonline.com/"
+          }
 	      }
      ]
     }
