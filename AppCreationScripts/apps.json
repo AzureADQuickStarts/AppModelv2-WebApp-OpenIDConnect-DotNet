@@ -15,7 +15,7 @@
           "type": "Web"
         }
       ],
-      "oauth2AllowImplicitFlow": true,
+      "oauth2AllowIdTokenImplicitFlow": true,
       "requiredResourceAccess": [
         {
           "x-ms-resourceAppName": "Microsoft Graph",
@@ -29,16 +29,16 @@
           ]
         }
       ],
-      "codeConfigurations": [	
+      "codeConfigurations": [
         {
-	        "settingFile": "/AppModelv2-WebApp-OpenIDConnect-DotNet/Web.config",
+          "settingFile": "/AppModelv2-WebApp-OpenIDConnect-DotNet/Web.config",
           "replaceTokens": {
             "appId": "Enter_the_Application_Id_here",
             "tenantId": "common",
             "authorityEndpointHost": "https://login.microsoftonline.com/"
           }
-	      }
-     ]
+        }
+      ]
     }
   ]
 }
