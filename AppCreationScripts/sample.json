@@ -15,8 +15,10 @@
     {
       "Id": "webApp",
       "Name": "Quickstart-AspNetWebAppCallingGraph",
-      "IsPublicClient": false,
-      "HomeUrl": "https://localhost:44368/"
+      "Kind": "WebApp",
+      "HomePage": "https://localhost:44368/",
+      "ReplyUrls": "https://localhost:44368/, https://localhost:44368/signin-oidc",
+      "LogoutUrl": "https://localhost:44368/signout-oidc"
     }
   ],
 

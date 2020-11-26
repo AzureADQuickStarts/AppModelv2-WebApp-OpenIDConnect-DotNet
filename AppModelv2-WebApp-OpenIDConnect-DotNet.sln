@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppModelv2-WebApp-OpenIDConnect-DotNet", "AppModelv2-WebApp-OpenIDConnect-DotNet\AppModelv2-WebApp-OpenIDConnect-DotNet.csproj", "{B1683E5F-00E4-4690-97AE-1C94A4F9FC82}"
 EndProject
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B13CF585-E4B1-4E06-9748-4714BF5CB915}
 	EndGlobalSection
 EndGlobal
