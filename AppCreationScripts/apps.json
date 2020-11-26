@@ -1,6 +1,6 @@
 {
   "Sample": {
-    "Title": "Signing users to an ASP.NET Web App with their Work and School and Microsoft personal accounts",
+    "Title": "Sign in a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform",
     "Level": 200,
     "Client": "ASP.NET Web App"
   },
@@ -17,7 +17,7 @@
         {
           "url": " https://localhost:44368/signin-oidc",
           "type": "Web"
-        } 
+        }
       ],
       "oauth2AllowImplicitFlow": false,
       "oauth2AllowIdTokenImplicitFlow": false,
@@ -29,7 +29,7 @@
             "tenantId": "common",
             "authorityEndpointHost": "https://login.microsoftonline.com/"
           }
-        } 
+        }
       ]
     }
   ]

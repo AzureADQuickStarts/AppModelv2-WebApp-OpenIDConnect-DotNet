@@ -5,11 +5,11 @@ languages:
 products:
   - aspnet
   - azure-active-directory  
-name: Sign in a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform endpoint
+name: Sign in a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform
 urlFragment: AppModelv2-WebApp-OpenIDConnect-DotNet
 description: "This sample demonstrates a ASP.NET Web App application that authenticates users against Azure AD"
 ---
-# Sign in a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform endpoint
+# Sign in a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform
 
  1. [Overview](#overview)
  1. [Scenario](#scenario)
@@ -36,7 +36,7 @@ This sample demonstrates a ASP.NET Web App application that authenticates users 
 
 ## Prerequisites
 
-- Either [Visual Studio](https://visualstudio.microsoft.com/downloads/) or [Visual Studio Code](https://code.visualstudio.com/download) and the [.NET Core SDK](https://www.microsoft.com/net/learn/get-started)
+- [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 - An **Azure AD** tenant. For more information see: [How to get an Azure AD tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 - A user account in your **Azure AD** tenant.
 
@@ -126,37 +126,9 @@ Open the project in your IDE (like Visual Studio or Visual Studio Code) to confi
 
 ## Running the sample
 
-You can run the sample by using either Visual Studio or command line interface as shown below:
-
-### Run the sample using Visual Studio
-
-Clean the solution, rebuild the solution, and run it.
-
-### Run the sample using a command line interface such as VS Code integrated terminal
-
-#### Step 1. Install .NET Core dependencies
-
-```console
-cd AppModelv2-WebApp-OpenIDConnect-DotNet
-dotnet restore
-```
-
-#### Step 2. Trust development certificates
-
-```console
-dotnet dev-certs https --clean
-dotnet dev-certs https --trust
-```
-
-Learn more about [HTTPS in .NET Core](https://docs.microsoft.com/aspnet/core/security/enforcing-ssl).
-
-#### Step 3. Run the applications
-
-In the console window execute the below command:
-
-```console
-dotnet run
-```
+> For Visual Studio Users
+>
+> Clean the solution, rebuild the solution, and run it.
 
 ## Explore the sample
 
