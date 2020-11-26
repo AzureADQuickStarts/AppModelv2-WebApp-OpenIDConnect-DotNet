@@ -1,9 +1,8 @@
 {
   "Sample": {
-    "Title": "Signing users to an ASP.NET Web App with their Work and School and Microsoft personal accounts",
+    "Title": "Sign in a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform endpoint",
     "Level": 200,
     "Client": "ASP.NET Web App",
-    "Service": "Microsoft Graph",
     "RepositoryUrl": "AppModelv2-WebApp-OpenIDConnect-DotNet",
     "Endpoint": "AAD v2.0"
   },
