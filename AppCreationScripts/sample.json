@@ -15,6 +15,7 @@
       "Id": "webApp",
       "Name": "Quickstart-AspNetWebAppCallingGraph",
       "Kind": "WebApp",
+      "Audience": "AzureADMyOrg",
       "HomePage": "https://localhost:44368/",
       "ReplyUrls": "https://localhost:44368/, https://localhost:44368/signin-oidc",
       "LogoutUrl": "https://localhost:44368/signout-oidc"
@@ -36,6 +37,10 @@
         {
           "key": "ClientId",
           "value": ".AppId"
+        },
+        {
+          "key": "Tenant",
+          "value": "$tenantId"
         }
       ]
     }

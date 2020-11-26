@@ -100,7 +100,6 @@ Function ConfigureApplications
                                                   -LogoutUrl "https://localhost:44368/signout-oidc" `
                                                   -ReplyUrls "https://localhost:44368/", "https://localhost:44368/signin-oidc" `
                                                   -IdentifierUris "https://$tenantName/Quickstart-AspNetWebAppCallingGraph" `
-                                                  -AvailableToOtherTenants $True `
                                                   -PublicClient $False
 
    # create the service principal of the newly created application 
@@ -128,6 +127,7 @@ Function ConfigureApplications
    $configFile = $pwd.Path + "\..\AppModelv2-WebApp-OpenIDConnect-DotNet\Web.config"
    Write-Host "Updating the sample code ($configFile)"
    ReplaceSetting -configFilePath $configFile -key "ClientId" -newValue ($webAppAadApplication.AppId)
+   ReplaceSetting -configFilePath $configFile -key "Tenant" -newValue ($tenantId)
   
    Add-Content -Value "</tbody></table></body></html>" -Path createdApps.html  
 }
