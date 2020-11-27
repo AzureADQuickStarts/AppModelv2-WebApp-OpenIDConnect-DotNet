@@ -13,7 +13,7 @@
   "AADApps": [
     {
       "Id": "webApp",
-      "Name": "Quickstart-AspNetWebAppCallingGraph",
+      "Name": "Quickstart-AspNetWebApp",
       "Kind": "WebApp",
       "Audience": "AzureADMyOrg",
       "HomePage": "https://localhost:44368/",

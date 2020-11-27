@@ -7,7 +7,7 @@
   "AppRegistrations": [
    {
       "x-ms-id": "webApp",
-      "x-ms-name": "Quickstart-AspNetWebAppCallingGraph",
+      "x-ms-name": "Quickstart-AspNetWebApp",
       "x-ms-version": "2.0",
       "replyUrlsWithType": [
         {

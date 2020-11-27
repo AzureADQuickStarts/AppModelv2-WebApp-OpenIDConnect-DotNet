@@ -93,13 +93,13 @@ Function ConfigureApplications
     $user = Get-AzureADUser -ObjectId $creds.Account.Id
 
    # Create the webApp AAD application
-   Write-Host "Creating the AAD application (Quickstart-AspNetWebAppCallingGraph)"
+   Write-Host "Creating the AAD application (Quickstart-AspNetWebApp)"
    # create the application 
-   $webAppAadApplication = New-AzureADApplication -DisplayName "Quickstart-AspNetWebAppCallingGraph" `
+   $webAppAadApplication = New-AzureADApplication -DisplayName "Quickstart-AspNetWebApp" `
                                                   -HomePage "https://localhost:44368/" `
                                                   -LogoutUrl "https://localhost:44368/signout-oidc" `
                                                   -ReplyUrls "https://localhost:44368/", "https://localhost:44368/signin-oidc" `
-                                                  -IdentifierUris "https://$tenantName/Quickstart-AspNetWebAppCallingGraph" `
+                                                  -IdentifierUris "https://$tenantName/Quickstart-AspNetWebApp" `
                                                   -PublicClient $False
 
    # create the service principal of the newly created application 
@@ -115,12 +115,12 @@ Function ConfigureApplications
    }
 
 
-   Write-Host "Done creating the webApp application (Quickstart-AspNetWebAppCallingGraph)"
+   Write-Host "Done creating the webApp application (Quickstart-AspNetWebApp)"
 
    # URL of the AAD application in the Azure portal
    # Future? $webAppPortalUrl = "https://portal.azure.com/#@"+$tenantName+"/blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/Overview/appId/"+$webAppAadApplication.AppId+"/objectId/"+$webAppAadApplication.ObjectId+"/isMSAApp/"
    $webAppPortalUrl = "https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/CallAnAPI/appId/"+$webAppAadApplication.AppId+"/objectId/"+$webAppAadApplication.ObjectId+"/isMSAApp/"
-   Add-Content -Value "<tr><td>webApp</td><td>$currentAppId</td><td><a href='$webAppPortalUrl'>Quickstart-AspNetWebAppCallingGraph</a></td></tr>" -Path createdApps.html
+   Add-Content -Value "<tr><td>webApp</td><td>$currentAppId</td><td><a href='$webAppPortalUrl'>Quickstart-AspNetWebApp</a></td></tr>" -Path createdApps.html
 
 
    # Update config file for 'webApp'

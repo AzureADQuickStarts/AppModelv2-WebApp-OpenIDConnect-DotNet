@@ -59,9 +59,9 @@ Function Cleanup
     # Removes the applications
     Write-Host "Cleaning-up applications from tenant '$tenantName'"
 
-    Write-Host "Removing 'webApp' (Quickstart-AspNetWebAppCallingGraph) if needed"
-    Get-AzureADApplication -Filter "DisplayName eq 'Quickstart-AspNetWebAppCallingGraph'"  | ForEach-Object {Remove-AzureADApplication -ObjectId $_.ObjectId }
-    $apps = Get-AzureADApplication -Filter "DisplayName eq 'Quickstart-AspNetWebAppCallingGraph'"
+    Write-Host "Removing 'webApp' (Quickstart-AspNetWebApp) if needed"
+    Get-AzureADApplication -Filter "DisplayName eq 'Quickstart-AspNetWebApp'"  | ForEach-Object {Remove-AzureADApplication -ObjectId $_.ObjectId }
+    $apps = Get-AzureADApplication -Filter "DisplayName eq 'Quickstart-AspNetWebApp'"
     if ($apps)
     {
         Remove-AzureADApplication -ObjectId $apps.ObjectId
@@ -70,10 +70,10 @@ Function Cleanup
     foreach ($app in $apps) 
     {
         Remove-AzureADApplication -ObjectId $app.ObjectId
-        Write-Host "Removed Quickstart-AspNetWebAppCallingGraph.."
+        Write-Host "Removed Quickstart-AspNetWebApp.."
     }
     # also remove service principals of this app
-    Get-AzureADServicePrincipal -filter "DisplayName eq 'Quickstart-AspNetWebAppCallingGraph'" | ForEach-Object {Remove-AzureADServicePrincipal -ObjectId $_.Id -Confirm:$false}
+    Get-AzureADServicePrincipal -filter "DisplayName eq 'Quickstart-AspNetWebApp'" | ForEach-Object {Remove-AzureADServicePrincipal -ObjectId $_.Id -Confirm:$false}
     
 }
 

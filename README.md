@@ -97,12 +97,12 @@ As a first step you'll need to:
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. If your account is present in more than one Azure AD tenant, select your profile at the top right corner in the menu on top of the page, and then **switch directory** to change your portal session to the desired Azure AD tenant.
 
-### Register the web app (Quickstart-AspNetWebAppCallingGraph)
+### Register the web app (Quickstart-AspNetWebApp)
 
 1. Navigate to the [Azure portal](https://portal.azure.com) and select the **Azure AD** service.
 1. Select the **App Registrations** blade on the left, then select **New registration**.
 1. In the **Register an application page** that appears, enter your application's registration information:
-   - In the **Name** section, enter a meaningful application name that will be displayed to users of the app, for example `Quickstart-AspNetWebAppCallingGraph`.
+   - In the **Name** section, enter a meaningful application name that will be displayed to users of the app, for example `Quickstart-AspNetWebApp`.
    - Under **Supported account types**, select **Accounts in this organizational directory only**.
    - In the **Redirect URI (optional)** section, select **Web** in the combo-box and enter the following redirect URI: `https://localhost:44368/`.
      > Note that there are more than one redirect URIs used in this sample. You'll need to add them from the **Authentication** tab later after the app has been created successfully.
@@ -115,15 +115,15 @@ As a first step you'll need to:
    - In the **Logout URL** section, set it to `https://localhost:44368/signout-oidc`.
 1. Select **Save** to save your changes.
 
-#### Configure the web app (Quickstart-AspNetWebAppCallingGraph) to use your app registration
+#### Configure the web app (Quickstart-AspNetWebApp) to use your app registration
 
 Open the project in your IDE (like Visual Studio or Visual Studio Code) to configure the code.
 
 > In the steps below, "ClientID" is the same as "Application ID" or "AppId".
 
 1. Open the `AppModelv2-WebApp-OpenIDConnect-DotNet\Web.config` file.
-1. Find the key `ClientId` and replace the existing value with the application ID (clientId) of the `Quickstart-AspNetWebAppCallingGraph` application copied from the Azure portal.
-1. Find the key `Tenant` and replace the existing value with your Azure AD tenant ID.																					 
+1. Find the key `ClientId` and replace the existing value with the application ID (clientId) of the `Quickstart-AspNetWebApp` application copied from the Azure portal.
+1. Find the key `Tenant` and replace the existing value with your Azure AD tenant ID.
 
 ## Running the sample
 
@@ -140,7 +140,7 @@ Open the project in your IDE (like Visual Studio or Visual Studio Code) to confi
 
 ![UserClaims](./ReadmeFiles/UserClaims.png)
 
-> :information_source: Did the sample not work for you as expected? Then please reach out to us using the [GitHub Issues](../../../../issues) page.
+> :information_source: Did the sample not work for you as expected? Then please reach out to us using the [GitHub Issues](../../issues) page.
 
 ## We'd love your feedback!
 
@@ -163,10 +163,6 @@ Were we successful in addressing your learning objective? [Do consider taking a 
                 PostLogoutRedirectUri = redirectUri,
                 Scope = OpenIdConnectScope.OpenIdProfile,
                 ResponseType = OpenIdConnectResponseType.IdToken,
-                TokenValidationParameters = new TokenValidationParameters()
-                {
-                    ValidateIssuer = false
-                },
                 Notifications = new OpenIdConnectAuthenticationNotifications
                 {
                     AuthenticationFailed = OnAuthenticationFailed
