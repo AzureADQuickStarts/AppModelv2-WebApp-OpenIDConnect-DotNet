@@ -1,9 +1,8 @@
 {
   "Sample": {
-    "Title": "Signing users to an ASP.NET Web App with their Work and School and Microsoft personal accounts",
+    "Title": "Sign in a user in an ASP.NET Web App with OpenID Connect and the Microsoft identity platform",
     "Level": 200,
     "Client": "ASP.NET Web App",
-    "Service": "Microsoft Graph",
     "RepositoryUrl": "AppModelv2-WebApp-OpenIDConnect-DotNet",
     "Endpoint": "AAD v2.0"
   },
@@ -14,9 +13,12 @@
   "AADApps": [
     {
       "Id": "webApp",
-      "Name": "Quickstart-AspNetWebAppCallingGraph",
-      "IsPublicClient": false,
-      "HomeUrl": "https://localhost:44368/"
+      "Name": "Quickstart-AspNetWebApp",
+      "Kind": "WebApp",
+      "Audience": "AzureADMyOrg",
+      "HomePage": "https://localhost:44368/",
+      "ReplyUrls": "https://localhost:44368/, https://localhost:44368/signin-oidc",
+      "LogoutUrl": "https://localhost:44368/signout-oidc"
     }
   ],
 
@@ -35,6 +37,10 @@
         {
           "key": "ClientId",
           "value": ".AppId"
+        },
+        {
+          "key": "Tenant",
+          "value": "$tenantId"
         }
       ]
     }

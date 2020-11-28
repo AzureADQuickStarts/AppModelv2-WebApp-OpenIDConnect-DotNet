@@ -48,13 +48,6 @@ namespace AppModelv2_WebApp_OpenIDConnect_DotNet
                 Scope = OpenIdConnectScope.OpenIdProfile,
                 // ResponseType is set to request the id_token - which contains basic information about the signed-in user
                 ResponseType = OpenIdConnectResponseType.IdToken,
-                // ValidateIssuer set to false to allow personal and work accounts from any organization to sign in to your application
-                // To only allow users from a single organizations, set ValidateIssuer to true and 'tenant' setting in web.config to the tenant name
-                // To allow users from only a list of specific organizations, set ValidateIssuer to true and use ValidIssuers parameter 
-                TokenValidationParameters = new TokenValidationParameters()
-                {
-                    ValidateIssuer = false
-                },
                 // OpenIdConnectAuthenticationNotifications configures OWIN to send notification of failed authentications to OnAuthenticationFailed method
                 Notifications = new OpenIdConnectAuthenticationNotifications
                 {
