@@ -22,16 +22,15 @@ description: "This sample demonstrates a ASP.NET Web App application that authen
  1. [About the code](#about-the-code)
  1. [More information](#more-information)
  1. [Community Help and Support](#community-help-and-support)
- 1. [Contributing](#contributing)
  1. [Code of Conduct](#code-of-conduct)
 
 ## Overview
 
-This sample demonstrates a ASP.NET Web App application that authenticates users against Azure AD.
+This sample demonstrates a ASP.NET web app application that authenticates users against Azure AD.
 
 ## Scenario
 
-1. The client ASP.NET Web App application uses the Microsoft Authentication Library (MSAL) to obtain an ID Token from **Azure AD**:
+1. The client ASP.NET web app application uses the Microsoft Authentication Library (MSAL) to obtain an ID Token from **Azure AD**:
 2. The **ID Token** proves that the user has successfully authenticated against **Azure AD**.
 
 ## Prerequisites
@@ -97,7 +96,7 @@ As a first step you'll need to:
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. If your account is present in more than one Azure AD tenant, select your profile at the top right corner in the menu on top of the page, and then **switch directory** to change your portal session to the desired Azure AD tenant.
 
-### Register the web app (Quickstart-AspNetWebApp)
+### Register the Web app (Quickstart-AspNetWebApp)
 
 1. Navigate to the [Azure portal](https://portal.azure.com) and select the **Azure AD** service.
 1. Select the **App Registrations** blade on the left, then select **New registration**.
@@ -112,10 +111,11 @@ As a first step you'll need to:
    - If you don't have a platform added, select **Add a platform** and select the **Web** option.
    - In the **Redirect URIs** section, enter the following redirect URIs.
       - `https://localhost:44368/signin-oidc`
+   - In **Implicit grant** section, select the check box for **ID tokens**.
    - In the **Logout URL** section, set it to `https://localhost:44368/signout-oidc`.
 1. Select **Save** to save your changes.
 
-#### Configure the web app (Quickstart-AspNetWebApp) to use your app registration
+#### Configure the Web app (Quickstart-AspNetWebApp) to use your app registration
 
 Open the project in your IDE (like Visual Studio or Visual Studio Code) to configure the code.
 
@@ -162,7 +162,7 @@ Were we successful in addressing your learning objective? [Do consider taking a 
                 RedirectUri = redirectUri,
                 PostLogoutRedirectUri = redirectUri,
                 Scope = OpenIdConnectScope.OpenIdProfile,
-                ResponseType = OpenIdConnectResponseType.IdToken,
+                ResponseType = OpenIdConnectResponseType.CodeIdToken,
                 Notifications = new OpenIdConnectAuthenticationNotifications
                 {
                     AuthenticationFailed = OnAuthenticationFailed
@@ -215,8 +215,6 @@ If you find a bug in the sample, raise the issue on [GitHub Issues](../../issues
 
 To provide feedback on or suggest features for Azure Active Directory, visit [User Voice page](https://feedback.azure.com/forums/169401-azure-active-directory).
 
-## Contributing
-
-If you'd like to contribute to this sample, see [CONTRIBUTING.MD](/CONTRIBUTING.md).
+## Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
