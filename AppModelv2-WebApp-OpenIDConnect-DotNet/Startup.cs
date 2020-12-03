@@ -46,8 +46,8 @@ namespace AppModelv2_WebApp_OpenIDConnect_DotNet
                 // PostLogoutRedirectUri is the page that users will be redirected to after sign-out. In this case, it is using the home page
                 PostLogoutRedirectUri = redirectUri,
                 Scope = OpenIdConnectScope.OpenIdProfile,
-                // ResponseType is set to request the id_token - which contains basic information about the signed-in user
-                ResponseType = OpenIdConnectResponseType.IdToken,
+                // ResponseType is set to request the code id_token - which contains basic information about the signed-in user
+                ResponseType = OpenIdConnectResponseType.CodeIdToken,
                 // OpenIdConnectAuthenticationNotifications configures OWIN to send notification of failed authentications to OnAuthenticationFailed method
                 Notifications = new OpenIdConnectAuthenticationNotifications
                 {
