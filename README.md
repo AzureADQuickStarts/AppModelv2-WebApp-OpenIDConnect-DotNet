@@ -46,7 +46,7 @@ This sample demonstrates a ASP.NET web app application that authenticates users 
 From your shell or command line:
 
 ```console
-git clone https://github.com/Azure-Samples/AppModelv2-WebApp-OpenIDConnect-DotNet.git
+git clone https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-DotNet.git
 cd AppModelv2-WebApp-OpenIDConnect-DotNet
 ```
 
