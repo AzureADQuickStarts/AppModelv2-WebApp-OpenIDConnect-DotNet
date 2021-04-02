@@ -58,9 +58,9 @@ or download and extract the repository .zip file.
 
 There is one project in this sample. To register it, you can:
 
-- follow the steps below for manually register your apps
+- follow the steps below to manually register your apps
 - or use PowerShell scripts that:
-  - **automatically** creates the Azure AD applications and related objects (passwords, permissions, dependencies) for you.
+  - **automatically** create the Azure AD applications and related objects (passwords, permissions, dependencies) for you.
   - modify the projects' configuration files.
 
 <details>
