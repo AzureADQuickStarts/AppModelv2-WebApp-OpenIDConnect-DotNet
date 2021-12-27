@@ -91,7 +91,7 @@ Tooltip.js as well:
 | unpkg  | [`https://unpkg.com/tooltip.js`](https://unpkg.com/tooltip.js)                   |
 | cdnjs  | [`https://cdnjs.com/libraries/popper.js`](https://cdnjs.com/libraries/popper.js) |
 
-\*: Bower isn't officially supported, it can be used to install Tooltip.js only trough the unpkg.com CDN. This method has the limitation of not being able to define a specific version of the library. Bower and Popper.js suggests to use npm or Yarn for your projects.  
+\*: Bower isn't officially supported, it can be used to install Tooltip.js only through the unpkg.com CDN. This method has the limitation of not being able to define a specific version of the library. Bower and Popper.js suggest using npm or Yarn for your projects.  
 For more info, [read the related issue](https://github.com/FezVrasta/popper.js/issues/390).
 
 ### Dist targets
@@ -156,7 +156,7 @@ Popper.js limits all its DOM modifications inside the `applyStyle` modifier,
 you can simply disable it and manually apply the popper coordinates using
 your library of choice.  
 
-For a comprehensive list of libraries that let you use Popper.js into existing
+For a comprehensive list of libraries that let you use Popper.js in existing
 frameworks, visit the [MENTIONS](/MENTIONS.md) page.
 
 Alternatively, you may even override your own `applyStyles` with your custom one and
