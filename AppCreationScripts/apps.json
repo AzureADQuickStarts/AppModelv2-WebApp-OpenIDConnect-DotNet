@@ -31,7 +31,7 @@
       ],
       "codeConfigurations": [
         {
-          "settingFile": "/AppModelv2-WebApp-OpenIDConnect-DotNet/Web.config",
+          "settingFile": "/AppModelv2-WebApp-OpenIDConnect-DotNet/appsettings.json",
           "replaceTokens": {
             "appId": "Enter_the_Application_Id_here",
             "tenantId": "common",
