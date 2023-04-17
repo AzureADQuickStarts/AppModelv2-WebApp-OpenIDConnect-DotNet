@@ -35,7 +35,8 @@
           "replaceTokens": {
             "appId": "Enter_the_Application_Id_here",
             "tenantId": "common",
-            "authorityEndpointHost": "https://login.microsoftonline.com/"
+            "authorityEndpointHost": "https://login.microsoftonline.com/",
+            "clientSecret": "Enter_the_Client_Secret_Here"
           }
         }
       ]
