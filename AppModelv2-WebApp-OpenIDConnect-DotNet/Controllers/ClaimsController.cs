@@ -30,7 +30,7 @@ namespace AppModelv2_WebApp_OpenIDConnect_DotNet.Controllers
             // You can also call Microsoft Graph (with incremental consent)
             try
             { 
-                var me = await this.GetGraphServiceClient().Me.Request().GetAsync();
+                var me = await this.GetGraphServiceClient().Me.GetAsync();
                 ViewBag.Username = me.DisplayName;
             }
             catch (ServiceException graphEx) when (graphEx.InnerException is MicrosoftIdentityWebChallengeUserException)

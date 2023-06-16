@@ -153,22 +153,16 @@ Were we successful in addressing your learning objective? [Do consider taking a 
     ```csharp
      public void Configuration(IAppBuilder app)
       {
-            ...
-            app.UseOpenIdConnectAuthentication(
-            new OpenIdConnectAuthenticationOptions
-            {
-                ClientId = clientId,
-                Authority = authority,
-                RedirectUri = redirectUri,
-                PostLogoutRedirectUri = redirectUri,
-                Scope = OpenIdConnectScope.OpenIdProfile,
-                ResponseType = OpenIdConnectResponseType.CodeIdToken,
-                Notifications = new OpenIdConnectAuthenticationNotifications
-                {
-                    AuthenticationFailed = OnAuthenticationFailed
-                }
-            }
-        );
+        /// ...
+        OwinTokenAcquirerFactory factory = TokenAcquirerFactory.GetDefaultInstance<OwinTokenAcquirerFactory>();
+
+        app.AddMicrosoftIdentityWebApp(factory);
+        factory.Services
+            .Configure<ConfidentialClientApplicationOptions>(options => { options.RedirectUri = "https://localhost:44368/"; })
+            .AddMicrosoftGraph()
+            .AddInMemoryTokenCaches();
+        factory.Build();
+
       }
     ```
 
@@ -195,6 +189,40 @@ Were we successful in addressing your learning objective? [Do consider taking a 
         }
     }
     ```
+
+1. `ClaimsController` shows how to access the claims in the ID token
+   ```csharp
+	 public ActionResult Index()
+	 {
+        var userClaims = User.Identity as System.Security.Claims.ClaimsIdentity;
+
+        // You get the user’s first and last name below:
+        ViewBag.Name = userClaims?.FindFirst("name")?.Value;
+
+        // The subject/ NameIdentifier claim can be used to uniquely identify the user across the web
+        ViewBag.Subject = userClaims?.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+        // TenantId is the unique Tenant Id - which represents an organization in Azure AD
+        ViewBag.TenantId = userClaims?.FindFirst("http://schemas.microsoft.com/identity/claims/tenantid")?.Value;
+	}
+	```
+
+1. It also shows how to call Microsoft Graph, with incremental consent (the user will need to consent
+   to more scopes if needed.
+
+   ```csharp
+    // You can also call Microsoft Graph (with incremental consent)
+    try
+    { 
+        var me = await this.GetGraphServiceClient().Me.GetAsync();
+        ViewBag.Username = me.DisplayName;
+    }
+    catch (ServiceException graphEx) when (graphEx.InnerException is MicrosoftIdentityWebChallengeUserException)
+    {
+        HttpContext.GetOwinContext().Authentication.Challenge(OpenIdConnectAuthenticationDefaults.AuthenticationType);
+        return View();
+    }
+   ```
 
 ## More information
 
